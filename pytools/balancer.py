@@ -32,7 +32,7 @@ def installBalancer(rDetails):
         writeDetails(rDetails)
         return True
     try:
-        rIn, rOut, rErr = rClient.exec_command("sudo apt-get install python")
+        rIn, rOut, rErr = rClient.exec_command("sudo apt-get install python -y")
         rStatus = rOut.channel.recv_exit_status()
         rIn, rOut, rErr = rClient.exec_command("sudo wget \"%s\" -O \"/tmp/balancer.py\"" % rDownloadURL)
         rStatus = rOut.channel.recv_exit_status()
